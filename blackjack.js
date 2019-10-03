@@ -49,6 +49,8 @@ function dealCards(antal) {
 
 function sumCards() {
     players.forEach(function (player) {
+        // Nollställ total.
+        player.total = null;
         player.hand.forEach(function (kort) {
             if ((ranks.indexOf(kort.rank) > 8) &&
                 (ranks.indexOf(kort.rank) < 12)) {
