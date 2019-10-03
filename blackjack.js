@@ -47,6 +47,18 @@ function dealCards(antal) {
     }
 }
 
+function sortHand() {
+    players.forEach(function (player) {
+        let aceIndex = player.hand.findIndex(function (kort) {
+            return kort.rank == "A"
+        });
+        if (aceIndex != -1) {
+            let temp = player.hand.splice(aceIndex, 1);
+            player.hand.push(temp[0]);
+        }
+    });
+}
+
 function sumCards() {
     players.forEach(function (player) {
         // Nollställ total.
